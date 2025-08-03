@@ -4,87 +4,248 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portafolio de Axel Gonzales Llerena</title>
-  <link rel="stylesheet" href="style.css">
+  <!-- Tailwind CSS via CDN for modern styling -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Configure Tailwind with a custom color palette for the portfolio -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              DEFAULT: '#1a2456',
+              light: '#31458d',
+            },
+            accent: {
+              DEFAULT: '#0fa9e6',
+              dark: '#0d81b7',
+            },
+          },
+        },
+      },
+    };
+  </script>
 </head>
 <body>
-  <!-- Hero section -->
-  <header class="hero">
-    <div class="overlay">
-      <h1>Axel Gonzales&nbsp;Llerena</h1>
-      <p class="subtitle">Lead Technical en&nbsp;Niubiz • Desarrollador&nbsp;de&nbsp;software</p>
-      <nav class="nav">
-        <a href="#about">Acerca de</a>
-        <a href="#projects">Proyectos</a>
-        <a href="#contact">Contacto</a>
+  <!-- Hero section with navigation and call to action -->
+  <header class="relative h-screen bg-cover bg-center" style="background-image: url('hero.png');">
+    <!-- Overlay to ensure text is readable -->
+    <div class="absolute inset-0 bg-primary bg-opacity-60"></div>
+    <div class="relative z-10 flex flex-col items-center justify-center h-full text-center px-6 text-white">
+      <h1 class="text-5xl font-extrabold mb-4 drop-shadow-lg">Axel&nbsp;Gonzales&nbsp;Llerena</h1>
+      <p class="text-xl md:text-2xl mb-8 max-w-3xl">Full&nbsp;Stack&nbsp;Developer&nbsp;• Tech&nbsp;Lead&nbsp;• Especialista&nbsp;en&nbsp;AWS&nbsp;e&nbsp;IA</p>
+      <nav class="flex flex-wrap justify-center space-x-4 md:space-x-6 text-lg mb-8">
+        <a href="#about" class="hover:text-accent">Acerca de</a>
+        <a href="#skills" class="hover:text-accent">Habilidades</a>
+        <a href="#projects" class="hover:text-accent">Proyectos</a>
+        <a href="#leadership" class="hover:text-accent">Liderazgo</a>
+        <a href="#cloud-ai" class="hover:text-accent">AWS&nbsp;/&nbsp;IA</a>
+        <a href="#contact" class="hover:text-accent">Contacto</a>
       </nav>
+      <a href="#contact" class="inline-block bg-accent hover:bg-accent-dark text-white font-medium px-6 py-3 rounded-lg shadow-lg transition">Contáctame</a>
     </div>
   </header>
 
   <!-- About section -->
-  <section id="about" class="section about">
-    <h2>Acerca de mí</h2>
-    <p>
-      ¡Hola! Soy Axel Gonzales Llerena, un desarrollador de software radicado en Lima, Perú. 
-      Actualmente trabajo como Lead Technical en la empresa de pagos <strong>Niubiz</strong>, donde lidero
-      iniciativas de arquitectura y desarrollo de servicios backend. 
-      Me gradué de la <strong>Universidad Nacional del Callao</strong> y desde entonces he acumulado
-      experiencia significativa construyendo aplicaciones en Java, Spring Boot y arquitecturas de microservicios.
-      Disfruto explorar nuevas tecnologías y compartir el conocimiento con la comunidad.
+  <section id="about" class="py-16 px-6 max-w-5xl mx-auto">
+    <h2 class="text-3xl md:text-4xl font-bold text-center mb-8">Acerca de mí</h2>
+    <p class="text-lg leading-relaxed text-gray-700">
+      ¡Hola! Soy Axel Gonzales Llerena, un desarrollador de software peruano radicado en Lima. Actualmente trabajo como <strong>Lead&nbsp;Technical</strong> en la pasarela de pagos <strong>Niubiz</strong>, donde dirijo iniciativas de arquitectura y desarrollo de servicios backend. Me gradué de la <strong>Universidad Nacional del&nbsp;Callao</strong> y desde entonces he acumulado experiencia significativa construyendo aplicaciones en Java, Spring&nbsp;Boot y arquitecturas de microservicios.
+      Me apasiona explorar nuevas tecnologías, liderar equipos para crear soluciones escalables y compartir conocimiento con la comunidad tecnológica.
     </p>
   </section>
 
+  <!-- Skills section -->
+  <section id="skills" class="py-16 px-6 bg-gray-100">
+    <h2 class="text-3xl md:text-4xl font-bold text-center mb-10">Habilidades y tecnologías</h2>
+    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
+      <!-- Frontend -->
+      <div>
+        <h3 class="text-2xl font-semibold mb-4">Frontend</h3>
+        <ul class="grid grid-cols-2 gap-3 text-gray-700">
+          <li>React.js &amp; Next.js</li>
+          <li>JavaScript&nbsp;/ TypeScript</li>
+          <li>HTML5 &amp; CSS3</li>
+          <li>Tailwind&nbsp;CSS</li>
+          <li>UX/UI &amp; Responsive Design</li>
+        </ul>
+      </div>
+      <!-- Backend -->
+      <div>
+        <h3 class="text-2xl font-semibold mb-4">Backend</h3>
+        <ul class="grid grid-cols-2 gap-3 text-gray-700">
+          <li>Java &amp; Spring Boot</li>
+          <li>Node.js &amp; Express</li>
+          <li>Python &amp; Django</li>
+          <li>REST &amp; GraphQL APIs</li>
+          <li>Testing: JUnit, Jest</li>
+        </ul>
+      </div>
+      <!-- Cloud & DevOps -->
+      <div>
+        <h3 class="text-2xl font-semibold mb-4">Cloud &amp; DevOps</h3>
+        <ul class="grid grid-cols-2 gap-3 text-gray-700">
+          <li>AWS&nbsp;EC2/Lambda/S3</li>
+          <li>Docker &amp; Kubernetes</li>
+          <li>Terraform &amp; IaC</li>
+          <li>CI/CD (GitHub Actions)</li>
+          <li>Linux &amp; Networking</li>
+        </ul>
+      </div>
+      <!-- Data & AI -->
+      <div>
+        <h3 class="text-2xl font-semibold mb-4">Datos &amp; IA</h3>
+        <ul class="grid grid-cols-2 gap-3 text-gray-700">
+          <li>Python &amp; Pandas</li>
+          <li>Machine Learning (scikit-learn)</li>
+          <li>Deep Learning (TensorFlow/PyTorch)</li>
+          <li>NLP &amp; Chatbots</li>
+          <li>Análisis de datos &amp; Visualización</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
   <!-- Projects section -->
-  <section id="projects" class="section projects">
-    <h2>Proyectos destacados</h2>
-    <div class="project-grid">
-      <div class="project-card">
-        <h3>JUnit5 Examples</h3>
-        <p>Repositorio con ejemplos y tutoriales de <a href="https://junit.org/junit5/" target="_blank">JUnit 5</a>, ideal para aprender pruebas unitarias en Java.</p>
-        <a class="project-link" href="https://github.com/axelgonzales/junit5-examples" target="_blank">Ver en GitHub</a>
+  <section id="projects" class="py-16 px-6">
+    <h2 class="text-3xl md:text-4xl font-bold text-center mb-10">Proyectos destacados</h2>
+    <div class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="bg-white rounded-lg shadow-md hover:shadow-lg transition p-6 flex flex-col justify-between">
+        <div>
+          <h3 class="text-xl font-semibold mb-2">JUnit5 Examples</h3>
+          <p class="text-gray-700 mb-4">Repositorio con ejemplos y tutoriales de&nbsp;<a class="text-accent hover:underline" href="https://junit.org/junit5/" target="_blank" rel="noopener">JUnit 5</a>, ideal para aprender pruebas unitarias en Java.</p>
+        </div>
+        <a class="text-primary font-medium hover:underline" href="https://github.com/axelgonzales/junit5-examples" target="_blank" rel="noopener">Ver en GitHub</a>
       </div>
-      <div class="project-card">
-        <h3>Spring‑Boot Examples</h3>
-        <p>Conjunto de ejemplos que muestran buenas prácticas de desarrollo con Spring Boot, 
-        basados en los contenidos de <a href="https://www.springboottutorial.com" target="_blank">springboottutorial.com</a>.</p>
-        <a class="project-link" href="https://github.com/axelgonzales/spring-boot-examples" target="_blank">Ver en GitHub</a>
+      <div class="bg-white rounded-lg shadow-md hover:shadow-lg transition p-6 flex flex-col justify-between">
+        <div>
+          <h3 class="text-xl font-semibold mb-2">Spring‑Boot Examples</h3>
+          <p class="text-gray-700 mb-4">Conjunto de ejemplos que muestran buenas prácticas de desarrollo con Spring Boot, basados en los contenidos de&nbsp;<a class="text-accent hover:underline" href="https://www.springboottutorial.com" target="_blank" rel="noopener">springboottutorial.com</a>.</p>
+        </div>
+        <a class="text-primary font-medium hover:underline" href="https://github.com/axelgonzales/spring-boot-examples" target="_blank" rel="noopener">Ver en GitHub</a>
       </div>
-      <div class="project-card">
-        <h3>Intercorp API</h3>
-        <p>Microservicio Java basado en Spring y AWS CodeStar que implementa una API REST para gestión de clientes de Intercorp.</p>
-        <a class="project-link" href="https://github.com/axelgonzales/IntercorpApi" target="_blank">Ver en GitHub</a>
+      <div class="bg-white rounded-lg shadow-md hover:shadow-lg transition p-6 flex flex-col justify-between">
+        <div>
+          <h3 class="text-xl font-semibold mb-2">Intercorp API</h3>
+          <p class="text-gray-700 mb-4">Microservicio Java basado en Spring y AWS CodeStar que implementa una API REST para la gestión de clientes de Intercorp.</p>
+        </div>
+        <a class="text-primary font-medium hover:underline" href="https://github.com/axelgonzales/IntercorpApi" target="_blank" rel="noopener">Ver en GitHub</a>
       </div>
-      <div class="project-card">
-        <h3>Intercorp Web Service</h3>
-        <p>Aplicación web Java creada con Spring y AWS CodeStar que expone los servicios de Intercorp a través de un servlet.</p>
-        <a class="project-link" href="https://github.com/axelgonzales/intercorp" target="_blank">Ver en GitHub</a>
+      <div class="bg-white rounded-lg shadow-md hover:shadow-lg transition p-6 flex flex-col justify-between">
+        <div>
+          <h3 class="text-xl font-semibold mb-2">Intercorp Web Service</h3>
+          <p class="text-gray-700 mb-4">Aplicación web Java creada con Spring y AWS CodeStar que expone los servicios de Intercorp a través de un servlet.</p>
+        </div>
+        <a class="text-primary font-medium hover:underline" href="https://github.com/axelgonzales/intercorp" target="_blank" rel="noopener">Ver en GitHub</a>
       </div>
-      <div class="project-card">
-        <h3>Persona Microservice</h3>
-        <p>Servicio de ejemplo para manejo de datos de personas, desarrollado con Spring Boot siguiendo principios de microservicios.</p>
-        <a class="project-link" href="https://github.com/axelgonzales/persona" target="_blank">Ver en GitHub</a>
+      <div class="bg-white rounded-lg shadow-md hover:shadow-lg transition p-6 flex flex-col justify-between">
+        <div>
+          <h3 class="text-xl font-semibold mb-2">Persona Microservice</h3>
+          <p class="text-gray-700 mb-4">Servicio de ejemplo para la gestión de datos de personas, desarrollado con Spring Boot siguiendo principios de microservicios.</p>
+        </div>
+        <a class="text-primary font-medium hover:underline" href="https://github.com/axelgonzales/persona" target="_blank" rel="noopener">Ver en GitHub</a>
       </div>
-      <div class="project-card">
-        <h3>Otros repositorios</h3>
-        <p>Explora más proyectos sobre análisis de imágenes, arquitecturas hexagonales y tareas backend.</p>
-        <a class="project-link" href="https://github.com/axelgonzales?tab=repositories" target="_blank">Ver todos</a>
+      <div class="bg-white rounded-lg shadow-md hover:shadow-lg transition p-6 flex flex-col justify-between">
+        <div>
+          <h3 class="text-xl font-semibold mb-2">Otros repositorios</h3>
+          <p class="text-gray-700 mb-4">Explora más proyectos sobre análisis de imágenes, arquitecturas hexagonales y tareas backend.</p>
+        </div>
+        <a class="text-primary font-medium hover:underline" href="https://github.com/axelgonzales?tab=repositories" target="_blank" rel="noopener">Ver todos</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Leadership & Mentoring section -->
+  <section id="leadership" class="py-16 px-6 bg-gray-100">
+    <h2 class="text-3xl md:text-4xl font-bold text-center mb-10">Liderazgo &amp; mentoría</h2>
+    <p class="text-lg leading-relaxed text-center max-w-3xl mx-auto mb-8 text-gray-700">
+      Como <strong>Tech Lead</strong>, combino experiencia técnica con liderazgo para impulsar equipos hacia soluciones de alto impacto. Estoy involucrado en la definición de arquitecturas, revisiones de código y la mentoría de desarrolladores para alinear los esfuerzos con los objetivos de negocio. Estas responsabilidades van más allá de codificar, ya que exigen comunicación efectiva y toma de decisiones estratégicas.
+    </p>
+    <ul class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 text-gray-700">
+      <li class="flex items-start space-x-3">
+        <span class="text-accent">✔</span>
+        <span>Diseño e implementación de arquitecturas de microservicios escalables.</span>
+      </li>
+      <li class="flex items-start space-x-3">
+        <span class="text-accent">✔</span>
+        <span>Mentoría a equipos de desarrollo sobre buenas prácticas y patrones de diseño.</span>
+      </li>
+      <li class="flex items-start space-x-3">
+        <span class="text-accent">✔</span>
+        <span>Definición de estándares de código y estrategias de revisión para asegurar calidad.</span>
+      </li>
+      <li class="flex items-start space-x-3">
+        <span class="text-accent">✔</span>
+        <span>Coordinación con líderes de negocio para alinear objetivos técnicos y comerciales.</span>
+      </li>
+    </ul>
+  </section>
+
+  <!-- Cloud & AI section -->
+  <section id="cloud-ai" class="py-16 px-6">
+    <h2 class="text-3xl md:text-4xl font-bold text-center mb-10">Cloud &amp; Inteligencia Artificial</h2>
+    <p class="text-lg leading-relaxed text-center max-w-4xl mx-auto mb-8 text-gray-700">
+      La nube y la inteligencia artificial son ejes clave en la tecnología moderna. Presento aquí una selección de proyectos que demuestran experiencia en servicios de AWS y técnicas de Machine&nbsp;Learning. Un portafolio sólido con proyectos y diagramas arquitectónicos destaca las certificaciones y la experiencia en AWS, así como la capacidad de aplicar modelos de IA a problemas reales.
+    </p>
+    <div class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="bg-white rounded-lg shadow-md p-6 flex flex-col justify-between">
+        <div>
+          <h3 class="text-xl font-semibold mb-2">API Serverless</h3>
+          <p class="text-gray-700 mb-4">Microservicio sin servidor diseñado con AWS Lambda, API Gateway y DynamoDB. Implementa operaciones CRUD con escalabilidad automática y despliegue mediante Infrastructure as Code.</p>
+        </div>
+        <span class="text-sm font-medium text-accent">Proyecto AWS</span>
+      </div>
+      <div class="bg-white rounded-lg shadow-md p-6 flex flex-col justify-between">
+        <div>
+          <h3 class="text-xl font-semibold mb-2">Chatbot IA</h3>
+          <p class="text-gray-700 mb-4">Chatbot de atención al usuario que utiliza modelos de lenguaje para responder preguntas frecuentes en español. Implementado con Transformers y desplegado en contenedores.</p>
+        </div>
+        <span class="text-sm font-medium text-accent">Proyecto IA</span>
+      </div>
+      <div class="bg-white rounded-lg shadow-md p-6 flex flex-col justify-between">
+        <div>
+          <h3 class="text-xl font-semibold mb-2">Análisis Predictivo</h3>
+          <p class="text-gray-700 mb-4">Proyecto de análisis de datos para predecir abandono de clientes usando técnicas de Machine Learning. Se utilizan Python, scikit‑learn y AWS SageMaker para entrenamiento y despliegue.</p>
+        </div>
+        <span class="text-sm font-medium text-accent">Proyecto Data&nbsp;Science</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certifications & Education section -->
+  <section id="certifications" class="py-16 px-6 bg-gray-100">
+    <h2 class="text-3xl md:text-4xl font-bold text-center mb-10">Certificaciones y educación</h2>
+    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 text-gray-700">
+      <div>
+        <h3 class="text-2xl font-semibold mb-2">Certificaciones AWS</h3>
+        <ul class="list-disc list-inside space-y-2">
+          <li>AWS Certified Solutions Architect – Associate</li>
+          <li>AWS Certified Developer – Associate</li>
+          <li>AWS Certified Machine Learning – Specialty</li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="text-2xl font-semibold mb-2">Formación académica</h3>
+        <p>Ingeniero de Sistemas, Universidad Nacional del Callao.</p>
+        <p>Especializaciones en Arquitectura de Software, Inteligencia Artificial y DevOps.</p>
       </div>
     </div>
   </section>
 
   <!-- Contact section -->
-  <section id="contact" class="section contact">
-    <h2>Contacto</h2>
-    <p>¿Te gustaría colaborar o tienes alguna pregunta? ¡No dudes en comunicarte!</p>
-    <ul class="contact-list">
-      <li><strong>Correo:</strong> <a href="mailto:axelgonzales@example.com">axelgonzales@example.com</a></li>
-      <li><strong>Ubicación:</strong> San Isidro, Lima, Perú</li>
-      <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/axel-gonzales-llerena/" target="_blank">axel-gonzales-llerena</a></li>
-      <li><strong>GitHub:</strong> <a href="https://github.com/axelgonzales" target="_blank">@axelgonzales</a></li>
-    </ul>
+  <section id="contact" class="py-16 px-6">
+    <h2 class="text-3xl md:text-4xl font-bold text-center mb-10">Contacto</h2>
+    <p class="text-center text-lg mb-6 text-gray-700">Si estás interesado en colaborar en proyectos o tienes alguna pregunta, ¡no dudes en escribirme!</p>
+    <div class="flex flex-col items-center space-y-2 text-primary text-lg">
+      <a href="mailto:axelgonzales@example.com" class="hover:text-accent">axelgonzales@example.com</a>
+      <span>San&nbsp;Isidro, Lima, Perú</span>
+      <a href="https://www.linkedin.com/in/axel-gonzales-llerena/" target="_blank" rel="noopener" class="hover:text-accent">LinkedIn</a>
+      <a href="https://github.com/axelgonzales" target="_blank" rel="noopener" class="hover:text-accent">GitHub</a>
+    </div>
   </section>
 
-  <footer>
-    © 2025 Axel Gonzales&nbsp;Llerena. Todos los derechos reservados.
+  <footer class="bg-primary text-white text-center py-4 text-sm">
+    © 2025&nbsp;Axel&nbsp;Gonzales&nbsp;Llerena. Todos los derechos reservados.
   </footer>
 </body>
 </html>
